@@ -22,3 +22,4 @@ kubectl logs k8s-rbac-exampl
 - pod port expose
 - pod health check
 - container explore
+- makefile

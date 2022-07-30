@@ -1,5 +1,16 @@
 #!/bin/bash
 
-version="1.0.0"
+name='k8s-rbas-example'
+version='1.0.1'
+tag="semihbkgr/$name:$version"
 
-docker build --tag semihbkgr/k8s-rbas-example:$version .
+docker build --tag $tag .
+
+while true; do
+    read -p "Do you wish to upload the image? [y/n] : " yn
+    case $yn in
+        [Yy]* ) docker push $tag; break;;
+        [Nn]* ) exit;;
+        * ) echo "[y/n] : ";;
+    esac
+done

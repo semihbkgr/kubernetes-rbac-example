@@ -4,5 +4,11 @@ metadata:
   name: k8s-rbac-example
 spec:
   containers:
-    - image: semihbkgr/k8s-rbas-example:1.0.0
+    - image: semihbkgr/k8s-rbas-example:1.0.1
       name: k8s-rbac-example
+      imagePullPolicy: Always
+      env:
+        - name: NAMESPACE
+          value: default
+        - name: POD_NAME
+          value: example-xxxxx
