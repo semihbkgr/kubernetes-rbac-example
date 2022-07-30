@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-rbac-example
+spec:
+  containers:
+    - image: semihbkgr/k8s-rbas-example:1.0.0
+      name: k8s-rbac-example
