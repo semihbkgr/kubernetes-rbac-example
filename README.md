@@ -1,8 +1,10 @@
 # K8S RBAC Example
 
+[RBAC](./rbac.yaml)
+
 docker image:
 
-`semihbkgr/k8s-rbas-example:1.0.0`
+`semihbkgr/k8s-rbas-example:latest`
 
 to create pod in k8s cluster:
 
@@ -15,12 +17,3 @@ to get logs:
 ```shell
 kubectl logs k8s-rbac-exampl
 ```
-
-### todo
-
-- pod resources
-- pod port expose
-- pod health check
-- container explore
-- makefile
-- list multiple resources like secrets and services

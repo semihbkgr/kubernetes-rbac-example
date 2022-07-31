@@ -3,13 +3,13 @@ kind: Pod
 metadata:
   name: k8s-rbac-example
 spec:
+  serviceAccountName: example-service-account
   containers:
-    - image: semihbkgr/k8s-rbas-example:1.0.1
+    - image: semihbkgr/k8s-rbas-example:latest
       name: k8s-rbac-example
       imagePullPolicy: Always
       env:
         - name: NAMESPACE
           value: default
         - name: POD_NAME
-          value: example-xxxxx
-  serviceAccountName: example-service-account
+          value: example-pod

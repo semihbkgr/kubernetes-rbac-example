@@ -13,15 +13,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
-	//
-	// Uncomment to load all auth plugins
-	// _ "k8s.io/client-go/plugin/pkg/client/auth"
-	//
-	// Or uncomment to load specific auth plugins
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/azure"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/oidc"
-	// _ "k8s.io/client-go/plugin/pkg/client/auth/openstack"
 )
 
 const (
@@ -89,7 +80,7 @@ func main() {
 		if ok {
 			pods, err := clientset.CoreV1().Pods("").List(ctx, metav1.ListOptions{})
 			if err != nil {
-				panic(err)
+				log.Println(err.Error())
 			}
 			log.Println(strings.Repeat("-", 90))
 			log.Printf("There are %d pods in the cluster\n", len(pods.Items))
@@ -97,7 +88,7 @@ func main() {
 			if len(namespace) != 0 {
 				pods, err = clientset.CoreV1().Pods(namespace).List(ctx, metav1.ListOptions{})
 				if err != nil {
-					panic(err)
+					log.Println(err.Error())
 				}
 				log.Printf("There are %d pods in '%s' namespace\n", len(pods.Items), namespace)
 			}
@@ -108,7 +99,7 @@ func main() {
 			} else if statusError, isStatus := err.(*errors.StatusError); isStatus {
 				log.Printf("Error getting pod %v\n", statusError.ErrStatus.Message)
 			} else if err != nil {
-				panic(err)
+				log.Println(err.Error())
 			} else {
 				log.Printf("Found '%s' pod in '%s' namespace\n", podName, namespace)
 			}
