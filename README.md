@@ -23,3 +23,4 @@ kubectl logs k8s-rbac-exampl
 - pod health check
 - container explore
 - makefile
+- list multiple resources like secrets and services

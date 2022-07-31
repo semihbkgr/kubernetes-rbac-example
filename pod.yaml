@@ -12,3 +12,4 @@ spec:
           value: default
         - name: POD_NAME
           value: example-xxxxx
+  serviceAccountName: example-service-account
