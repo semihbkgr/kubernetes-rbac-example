@@ -5,7 +5,7 @@ metadata:
 spec:
   serviceAccountName: example-service-account
   containers:
-    - image: semihbkgr/k8s-rbas-example:latest
+    - image: semihbkgr/k8s-rbas-example:1.0.3
       name: k8s-rbac-example
       imagePullPolicy: Always
       env:
@@ -13,3 +13,7 @@ spec:
           value: default
         - name: POD_NAME
           value: example-pod
+        - name: SERVICE_NAME
+          value: example-service
+        - name: SECRET_NAME
+          value: example-secret

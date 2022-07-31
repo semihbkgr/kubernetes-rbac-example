@@ -2,9 +2,13 @@
 
 [RBAC](./rbac.yaml)
 
-docker image:
+docker image `semihbkgr/k8s-rbas-example:1.0.3`
 
-`semihbkgr/k8s-rbas-example:latest`
+apply rbac:
+
+```shell
+kubectl apply -f rbac.yaml
+```
 
 to create pod in k8s cluster:
 
