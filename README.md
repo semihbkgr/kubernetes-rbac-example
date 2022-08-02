@@ -1,8 +1,8 @@
-# K8S RBAC Example
+# Kubernetes RBAC Example
 
 [RBAC](./rbac.yaml)
 
-docker image `semihbkgr/k8s-rbas-example:1.0.3`
+docker image `semihbkgr/kubernetes-rbac-example:1.0.0`
 
 apply rbac:
 
@@ -10,7 +10,7 @@ apply rbac:
 kubectl apply -f rbac.yaml
 ```
 
-to create pod in k8s cluster:
+to create pod in kubernetes cluster:
 
 ```shell
 kubectl apply -f pod.yaml
@@ -19,5 +19,5 @@ kubectl apply -f pod.yaml
 to get logs:
 
 ```shell
-kubectl logs k8s-rbac-exampl
+kubectl logs kubernetes-rbac-example
 ```

@@ -1,4 +1,4 @@
-module github.com/semihbkgr/k8s-rbac-example
+module github.com/semihbkgr/kubernetes-rbac-example
 
 go 1.18
 

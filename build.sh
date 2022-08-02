@@ -1,7 +1,7 @@
 #!/bin/bash
 
-name='k8s-rbas-example'
-version='1.0.3'
+name='kubernetes-rbac-example'
+version='1.0.0'
 tag="semihbkgr/$name:$version"
 
 docker build --tag $tag .

@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: example-service-account
+  name: kubernetes-rbac-example-sa
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: example-role
+  name: kubernetes-rbac-example-cr
 rules:
   - apiGroups:
       - ""
@@ -21,12 +21,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: example-role-binding
+  name: kubernetes-rbac-example-crb
 roleRef:
   kind: ClusterRole
-  name: example-role
+  name: kubernetes-rbac-example-cr
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
-    name: example-service-account
+    name: kubernetes-rbac-example-sa
     namespace: default
